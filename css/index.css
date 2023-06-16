@@ -5,7 +5,8 @@
 }
 
 :root{
-    --index:calc(1vw + 1vh)
+    --index:calc(1vw + 1vh);
+    --window_width:calc(1vw);
 }
 @font-face {
     font-family: kamerik-3d;
@@ -44,7 +45,7 @@ header{
     min-height: 500px;
     transform-style: preserve-3d;
     will-change: transform;
-    transform: rotateX(var(--move-x)) rotateY(var(--move-y));
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
 }
 
 .layers__item{
@@ -75,3 +76,54 @@ header{
 .layers-6 {
     transform: translateZ(380px);
 }
+
+.main-text{
+    text-align: center;
+    font-family: kamerik-3d;
+    text-transform: uppercase;
+    font-size: calc(var(--index)*2.9);
+    letter-spacing: calc(var(--index)* -0.15);
+    line-height: 1.2em;
+}
+.main-text span {
+    display: block;
+}
+.text__p{
+    font-family:merriweather-3d;
+    font-size: calc(var(--index)*0.8);
+    letter-spacing: calc(var(--index)* 0.2);
+    text-transform: none;
+}
+nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+#navbar{
+    height: 0;
+    color: black;
+    margin-top: -50px;
+    width: 1400px;
+    box-sizing: content-box;
+    border-bottom: 100px solid rgba(0, 0, 0, 0.4);
+    transform: rotateX(180deg);
+    padding-left: calc(var(--window_width)*37.5);
+}
+nav a{
+    color: white;
+    text-align: center;
+    padding: 17px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: calc(var(--index)*0.75);
+    float: left;
+    transform: rotateX(180deg);
+}
+nav a:hover{
+    background: rgba(101,101,228,0.8);
+    color: black;
+    border-radius: 5px;
+}
+
